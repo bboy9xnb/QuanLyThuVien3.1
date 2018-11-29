@@ -1,0 +1,7 @@
+S:\BTL\WinForm\QuanLyThuVienV3.1\DAL ( Connector )\bin\Debug\DAL ( Connector ).dll
+S:\BTL\WinForm\QuanLyThuVienV3.1\DAL ( Connector )\bin\Debug\DAL ( Connector ).pdb
+S:\BTL\WinForm\QuanLyThuVienV3.1\DAL ( Connector )\bin\Debug\DTO ( Model ).dll
+S:\BTL\WinForm\QuanLyThuVienV3.1\DAL ( Connector )\bin\Debug\DTO ( Model ).pdb
+S:\BTL\WinForm\QuanLyThuVienV3.1\DAL ( Connector )\obj\Debug\DAL(Connector).csprojResolveAssemblyReference.cache
+S:\BTL\WinForm\QuanLyThuVienV3.1\DAL ( Connector )\obj\Debug\DAL ( Connector ).dll
+S:\BTL\WinForm\QuanLyThuVienV3.1\DAL ( Connector )\obj\Debug\DAL ( Connector ).pdb

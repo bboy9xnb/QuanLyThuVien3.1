@@ -1,0 +1,9 @@
+S:\BTL\WinForm\QuanLyThuVienV3.1\BUL ( Bus )\bin\Debug\BUL ( Bus ).dll
+S:\BTL\WinForm\QuanLyThuVienV3.1\BUL ( Bus )\bin\Debug\BUL ( Bus ).pdb
+S:\BTL\WinForm\QuanLyThuVienV3.1\BUL ( Bus )\bin\Debug\DAL ( Connector ).dll
+S:\BTL\WinForm\QuanLyThuVienV3.1\BUL ( Bus )\bin\Debug\DTO ( Model ).dll
+S:\BTL\WinForm\QuanLyThuVienV3.1\BUL ( Bus )\bin\Debug\DAL ( Connector ).pdb
+S:\BTL\WinForm\QuanLyThuVienV3.1\BUL ( Bus )\bin\Debug\DTO ( Model ).pdb
+S:\BTL\WinForm\QuanLyThuVienV3.1\BUL ( Bus )\obj\Debug\BUL(Bus).csprojResolveAssemblyReference.cache
+S:\BTL\WinForm\QuanLyThuVienV3.1\BUL ( Bus )\obj\Debug\BUL ( Bus ).dll
+S:\BTL\WinForm\QuanLyThuVienV3.1\BUL ( Bus )\obj\Debug\BUL ( Bus ).pdb

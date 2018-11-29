@@ -1,0 +1,21 @@
+S:\BTL\WinForm\QuanLyThuVienV3.1\QuanLyThuVienV3.1\bin\Debug\QuanLyThuVienV3.1.exe.config
+S:\BTL\WinForm\QuanLyThuVienV3.1\QuanLyThuVienV3.1\bin\Debug\QuanLyThuVienV3.1.exe
+S:\BTL\WinForm\QuanLyThuVienV3.1\QuanLyThuVienV3.1\bin\Debug\QuanLyThuVienV3.1.pdb
+S:\BTL\WinForm\QuanLyThuVienV3.1\QuanLyThuVienV3.1\obj\Debug\QuanLyThuVienV3.1.csprojResolveAssemblyReference.cache
+S:\BTL\WinForm\QuanLyThuVienV3.1\QuanLyThuVienV3.1\obj\Debug\QuanLyThuVienV3._1.FrmLogin.resources
+S:\BTL\WinForm\QuanLyThuVienV3.1\QuanLyThuVienV3.1\obj\Debug\QuanLyThuVienV3._1.FrmMain.resources
+S:\BTL\WinForm\QuanLyThuVienV3.1\QuanLyThuVienV3.1\obj\Debug\QuanLyThuVienV3._1.Properties.Resources.resources
+S:\BTL\WinForm\QuanLyThuVienV3.1\QuanLyThuVienV3.1\obj\Debug\QuanLyThuVienV3.1.csproj.GenerateResource.Cache
+S:\BTL\WinForm\QuanLyThuVienV3.1\QuanLyThuVienV3.1\obj\Debug\QuanLyThuVienV3.1.exe
+S:\BTL\WinForm\QuanLyThuVienV3.1\QuanLyThuVienV3.1\obj\Debug\QuanLyThuVienV3.1.pdb
+S:\BTL\WinForm\QuanLyThuVienV3.1\QuanLyThuVienV3.1\bin\Debug\BUL ( Bus ).dll
+S:\BTL\WinForm\QuanLyThuVienV3.1\QuanLyThuVienV3.1\bin\Debug\DAL ( Connector ).dll
+S:\BTL\WinForm\QuanLyThuVienV3.1\QuanLyThuVienV3.1\bin\Debug\DTO ( Model ).dll
+S:\BTL\WinForm\QuanLyThuVienV3.1\QuanLyThuVienV3.1\bin\Debug\BUL ( Bus ).pdb
+S:\BTL\WinForm\QuanLyThuVienV3.1\QuanLyThuVienV3.1\bin\Debug\DAL ( Connector ).pdb
+S:\BTL\WinForm\QuanLyThuVienV3.1\QuanLyThuVienV3.1\bin\Debug\DTO ( Model ).pdb
+S:\BTL\WinForm\QuanLyThuVienV3.1\QuanLyThuVienV3.1\obj\Debug\QuanLyThuVienV3._1.FrmEmployeeManager.resources
+S:\BTL\WinForm\QuanLyThuVienV3.1\QuanLyThuVienV3.1\obj\Debug\QuanLyThuVienV3._1.FrmViewDetailEmployess.resources
+S:\BTL\WinForm\QuanLyThuVienV3.1\QuanLyThuVienV3.1\obj\Debug\QuanLyThuVienV3._1.FrmAuthorManager.resources
+S:\BTL\WinForm\QuanLyThuVienV3.1\QuanLyThuVienV3.1\obj\Debug\QuanLyThuVienV3._1.FrmBorrowBooks.resources
+S:\BTL\WinForm\QuanLyThuVienV3.1\QuanLyThuVienV3.1\obj\Debug\QuanLyThuVienV3._1.FrmBooks.resources

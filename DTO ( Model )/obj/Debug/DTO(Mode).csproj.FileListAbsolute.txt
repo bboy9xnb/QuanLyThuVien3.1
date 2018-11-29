@@ -1,0 +1,5 @@
+S:\BTL\WinForm\QuanLyThuVienV3.1\DTO ( Model )\bin\Debug\DTO ( Model ).dll
+S:\BTL\WinForm\QuanLyThuVienV3.1\DTO ( Model )\bin\Debug\DTO ( Model ).pdb
+S:\BTL\WinForm\QuanLyThuVienV3.1\DTO ( Model )\obj\Debug\DTO(Mode).csprojResolveAssemblyReference.cache
+S:\BTL\WinForm\QuanLyThuVienV3.1\DTO ( Model )\obj\Debug\DTO ( Model ).dll
+S:\BTL\WinForm\QuanLyThuVienV3.1\DTO ( Model )\obj\Debug\DTO ( Model ).pdb
