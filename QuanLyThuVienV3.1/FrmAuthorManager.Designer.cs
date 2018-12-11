@@ -54,6 +54,13 @@
             this.btnUpdate = new System.Windows.Forms.Button();
             this.btnDelete = new System.Windows.Forms.Button();
             this.monthCalendar1 = new System.Windows.Forms.MonthCalendar();
+            this.MaDocGia = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.HoTen = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.GioiTinh = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DoiTuong = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NgaySinh = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NgayCap = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NgayHetHan = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.menuStrip1.SuspendLayout();
             this.tableFrom.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataAuthor)).BeginInit();
@@ -262,6 +269,14 @@
             // 
             this.dataAuthor.BackgroundColor = System.Drawing.Color.White;
             this.dataAuthor.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataAuthor.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.MaDocGia,
+            this.HoTen,
+            this.GioiTinh,
+            this.DoiTuong,
+            this.NgaySinh,
+            this.NgayCap,
+            this.NgayHetHan});
             this.dataAuthor.Location = new System.Drawing.Point(385, 144);
             this.dataAuthor.Name = "dataAuthor";
             this.dataAuthor.Size = new System.Drawing.Size(662, 248);
@@ -310,6 +325,48 @@
             this.monthCalendar1.Location = new System.Drawing.Point(12, 33);
             this.monthCalendar1.Name = "monthCalendar1";
             this.monthCalendar1.TabIndex = 24;
+            // 
+            // MaDocGia
+            // 
+            this.MaDocGia.DataPropertyName = "MaDocGia";
+            this.MaDocGia.HeaderText = "Mã độc giả";
+            this.MaDocGia.Name = "MaDocGia";
+            // 
+            // HoTen
+            // 
+            this.HoTen.DataPropertyName = "HoTen";
+            this.HoTen.HeaderText = "Họ và tên";
+            this.HoTen.Name = "HoTen";
+            // 
+            // GioiTinh
+            // 
+            this.GioiTinh.DataPropertyName = "GioiTinh";
+            this.GioiTinh.HeaderText = "Giới tính";
+            this.GioiTinh.Name = "GioiTinh";
+            // 
+            // DoiTuong
+            // 
+            this.DoiTuong.DataPropertyName = "DoiTuong";
+            this.DoiTuong.HeaderText = "Đối tượng";
+            this.DoiTuong.Name = "DoiTuong";
+            // 
+            // NgaySinh
+            // 
+            this.NgaySinh.DataPropertyName = "NgaySinh";
+            this.NgaySinh.HeaderText = "Ngày Sinh";
+            this.NgaySinh.Name = "NgaySinh";
+            // 
+            // NgayCap
+            // 
+            this.NgayCap.DataPropertyName = "NgayCap";
+            this.NgayCap.HeaderText = "Ngày Cấp";
+            this.NgayCap.Name = "NgayCap";
+            // 
+            // NgayHetHan
+            // 
+            this.NgayHetHan.DataPropertyName = "NgayHetHan";
+            this.NgayHetHan.HeaderText = "Ngày hết hạn";
+            this.NgayHetHan.Name = "NgayHetHan";
             // 
             // FrmAuthorManager
             // 
@@ -370,5 +427,12 @@
         private System.Windows.Forms.Button btnUpdate;
         private System.Windows.Forms.Button btnDelete;
         private System.Windows.Forms.MonthCalendar monthCalendar1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn MaDocGia;
+        private System.Windows.Forms.DataGridViewTextBoxColumn HoTen;
+        private System.Windows.Forms.DataGridViewTextBoxColumn GioiTinh;
+        private System.Windows.Forms.DataGridViewTextBoxColumn DoiTuong;
+        private System.Windows.Forms.DataGridViewTextBoxColumn NgaySinh;
+        private System.Windows.Forms.DataGridViewTextBoxColumn NgayCap;
+        private System.Windows.Forms.DataGridViewTextBoxColumn NgayHetHan;
     }
 }

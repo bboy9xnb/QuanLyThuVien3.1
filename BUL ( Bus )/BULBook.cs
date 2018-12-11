@@ -23,13 +23,19 @@ namespace BULBus
         {
             return myTaiLieuDal.UpdateKind(k);
         }
-        public List<kind> SearchByID (string id)
+        public List<kind> SearchByID(string id)
         {
             return myTaiLieuDal.SearchKind(id);
         }
-        public bool DeleteKind (string id)
+        public bool DeleteKind(string id)
         {
             return myTaiLieuDal.DeleteKind(id);
+        }
+
+
+        public string GetKindIdByKindName(string kindName)
+        {
+            return myTaiLieuDal.GetKindIdByKindName(kindName);
         }
 
         /*------------------------ tài liệu -----------------------------*/

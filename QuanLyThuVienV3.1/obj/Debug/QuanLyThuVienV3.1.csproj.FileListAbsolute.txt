@@ -15,7 +15,10 @@ S:\BTL\WinForm\QuanLyThuVienV3.1\QuanLyThuVienV3.1\bin\Debug\BUL ( Bus ).pdb
 S:\BTL\WinForm\QuanLyThuVienV3.1\QuanLyThuVienV3.1\bin\Debug\DAL ( Connector ).pdb
 S:\BTL\WinForm\QuanLyThuVienV3.1\QuanLyThuVienV3.1\bin\Debug\DTO ( Model ).pdb
 S:\BTL\WinForm\QuanLyThuVienV3.1\QuanLyThuVienV3.1\obj\Debug\QuanLyThuVienV3._1.FrmEmployeeManager.resources
-S:\BTL\WinForm\QuanLyThuVienV3.1\QuanLyThuVienV3.1\obj\Debug\QuanLyThuVienV3._1.FrmViewDetailEmployess.resources
 S:\BTL\WinForm\QuanLyThuVienV3.1\QuanLyThuVienV3.1\obj\Debug\QuanLyThuVienV3._1.FrmAuthorManager.resources
 S:\BTL\WinForm\QuanLyThuVienV3.1\QuanLyThuVienV3.1\obj\Debug\QuanLyThuVienV3._1.FrmBorrowBooks.resources
 S:\BTL\WinForm\QuanLyThuVienV3.1\QuanLyThuVienV3.1\obj\Debug\QuanLyThuVienV3._1.FrmBooks.resources
+S:\BTL\WinForm\QuanLyThuVienV3.1\QuanLyThuVienV3.1\bin\Debug\itextsharp.dll
+S:\BTL\WinForm\QuanLyThuVienV3.1\QuanLyThuVienV3.1\obj\Debug\QuanLyThuVienV3._1.FrmCheckOutBorrowBook.resources
+S:\BTL\WinForm\QuanLyThuVienV3.1\QuanLyThuVienV3.1\obj\Debug\QuanLyThuVienV3._1.TKTop10.resources
+S:\BTL\WinForm\QuanLyThuVienV3.1\QuanLyThuVienV3.1\obj\Debug\QuanLyThuVienV3._1.TKQuaHan.resources

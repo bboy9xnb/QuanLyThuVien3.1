@@ -44,7 +44,9 @@
     <Compile Include="BULAuthor.cs" />
     <Compile Include="BULBook.cs" />
     <Compile Include="BULBorrowBook.cs" />
+    <Compile Include="BULCheckoutBorrow.cs" />
     <Compile Include="BULEmployees.cs" />
+    <Compile Include="BULThongkeTop10.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

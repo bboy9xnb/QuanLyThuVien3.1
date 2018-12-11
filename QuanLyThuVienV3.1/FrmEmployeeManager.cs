@@ -21,6 +21,8 @@ namespace QuanLyThuVienV3._1
 
         public FrmEmployeeManager()
         {
+           // dataEmployees.Columns[0].HeaderCell.Value = "Mã nhân viên";
+           
             Refresh();
             InitializeComponent();
             ViewListNV();
@@ -92,6 +94,19 @@ namespace QuanLyThuVienV3._1
                 dataEmployees.Columns.Remove(btnViewDetail);
                 dataEmployees.Columns.Insert(columnIndex, btnViewDetail);
             }
+
+
+            // tự độgn lấy mã nhân viên
+            int count = 0;
+            count = dataEmployees.Rows.Count;
+            string chuoi = "";
+            int chuoi2 = 0;
+            chuoi = Convert.ToString(dataEmployees.Rows[count - 1].Cells[0].Value);
+            chuoi2 = Convert.ToInt32((chuoi.Remove(0, 2)));
+            if (chuoi2 + 1 < 10)
+                tbUserID.Text = "NV0" + (chuoi2 + 1).ToString();
+            else if (chuoi2 + 1 < 100)
+                tbUserID.Text = "NV" + (chuoi2 + 1).ToString();
 
         }
 
@@ -196,6 +211,7 @@ namespace QuanLyThuVienV3._1
         {
             //viewControll(false);
             cickview(false);
+            setTextboxNull();
         }
 
         private void btnDelete_Click(object sender, EventArgs e)
@@ -265,6 +281,14 @@ namespace QuanLyThuVienV3._1
                 tbPassword.PasswordChar = '\0';
             else
                 tbPassword.PasswordChar = '*';
+        }
+
+        private void dataEmployeeFomat(object sender, DataGridViewCellFormattingEventArgs e)
+        {
+            if (e.ColumnIndex == 4 && e.Value != null)
+            {
+                e.Value = new String('*', e.Value.ToString().Length);
+            }
         }
     }
 }

@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using DTOModel;
 using DALConnector;
-
+using System.Data;
 
 namespace BULBus
 {
@@ -54,6 +54,10 @@ namespace BULBus
         public List<Employees> ViewTableNVByUserID(string userID)
         {
             return nv.ViewTableNVByUserID(userID);
+        }
+        public DataTable listUserTest()
+        {
+            return nv.listUserBorrow();
         }
     }
 }

@@ -121,8 +121,8 @@
   <data name="ic_pay" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\hinhanh\ic_pay.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="ic_help" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\hinhanh\ic_help.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="background-powerpoint-dep-cho-hoc-sinh-3-228x171" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\hinhanh\background-powerpoint-dep-cho-hoc-sinh-3-228x171.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="ic_add" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\hinhanh\ic_add.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -138,6 +138,9 @@
   </data>
   <data name="backgroundLogin" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\hinhanh\backgroundLogin.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="backgroundLogin1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\hinhanh\backgroundLogin.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="logo" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\hinhanh\logo.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -166,8 +169,8 @@
   <data name="search" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\hinhanh\search.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="backgroundLogin1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\hinhanh\backgroundLogin.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="ic_help" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\hinhanh\ic_help.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="ic_document" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\hinhanh\ic_document.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -178,7 +181,7 @@
   <data name="icons8-exit-26" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\hinhanh\icons8-exit-26.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="background-powerpoint-dep-cho-hoc-sinh-3-228x171" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\hinhanh\background-powerpoint-dep-cho-hoc-sinh-3-228x171.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="crestock-1293599-2560x1600" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\hinhanh\crestock-1293599-2560x1600.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

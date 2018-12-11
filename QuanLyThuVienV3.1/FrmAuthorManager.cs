@@ -80,13 +80,15 @@ namespace QuanLyThuVienV3._1
         }
 
         private void FrmAuthorManager_Load(object sender, EventArgs e)
-        {
+        { // tự độgn lấy mã nhân viên
+            
             HienThiDuLieu();
             List<string> valueCBbox = new List<string>();
             valueCBbox.Add("Nam");
             valueCBbox.Add("Nữ");
             cbSex.DataSource = valueCBbox;
             viewControll(true);
+           
         }
         private void HienThiDuLieu()
         {
@@ -118,6 +120,16 @@ namespace QuanLyThuVienV3._1
                 dataAuthor.Columns.Remove(btnViewDetail);
                 dataAuthor.Columns.Insert(columnIndex, btnViewDetail);
             }
+            int count = 0;
+            count = dataAuthor.Rows.Count;
+            string chuoi = "";
+            int chuoi2 = 0;
+            chuoi = Convert.ToString(dataAuthor.Rows[count - 1].Cells[0].Value);
+            chuoi2 = Convert.ToInt32((chuoi.Remove(0, 2)));
+            if (chuoi2 + 1 < 10)
+                tbAuthorID.Text = "dg0" + (chuoi2 + 1).ToString();
+            else if (chuoi2 + 1 < 100)
+                tbAuthorID.Text = "dg" + (chuoi2 + 1).ToString();
 
         }
         void viewControll(bool view)

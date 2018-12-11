@@ -57,6 +57,12 @@
             this.btnUpdate = new System.Windows.Forms.Button();
             this.btnDelete = new System.Windows.Forms.Button();
             this.btnViewPass = new System.Windows.Forms.Button();
+            this.MaNhanVien = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.HoTen = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ChucVu = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TaiKhoan = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.MatKhau = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Quyen = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataEmployees)).BeginInit();
             this.tableAdd.SuspendLayout();
             this.menuStrip1.SuspendLayout();
@@ -83,11 +89,19 @@
             // 
             this.dataEmployees.BackgroundColor = System.Drawing.Color.White;
             this.dataEmployees.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataEmployees.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.MaNhanVien,
+            this.HoTen,
+            this.ChucVu,
+            this.TaiKhoan,
+            this.MatKhau,
+            this.Quyen});
             this.dataEmployees.Location = new System.Drawing.Point(408, 105);
             this.dataEmployees.Name = "dataEmployees";
             this.dataEmployees.Size = new System.Drawing.Size(662, 248);
             this.dataEmployees.TabIndex = 5;
             this.dataEmployees.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataEmployees_CellContentClick);
+            this.dataEmployees.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dataEmployeeFomat);
             // 
             // btnViewAll
             // 
@@ -344,6 +358,42 @@
             this.btnViewPass.UseVisualStyleBackColor = true;
             this.btnViewPass.Click += new System.EventHandler(this.btnViewPass_Click);
             // 
+            // MaNhanVien
+            // 
+            this.MaNhanVien.DataPropertyName = "MaNhanVien";
+            this.MaNhanVien.HeaderText = "Mã nhân viên";
+            this.MaNhanVien.Name = "MaNhanVien";
+            // 
+            // HoTen
+            // 
+            this.HoTen.DataPropertyName = "HoTen";
+            this.HoTen.HeaderText = "Họ và Tên";
+            this.HoTen.Name = "HoTen";
+            // 
+            // ChucVu
+            // 
+            this.ChucVu.DataPropertyName = "ChucVu";
+            this.ChucVu.HeaderText = "Chức vụ";
+            this.ChucVu.Name = "ChucVu";
+            // 
+            // TaiKhoan
+            // 
+            this.TaiKhoan.DataPropertyName = "UserName";
+            this.TaiKhoan.HeaderText = "Tài khoản";
+            this.TaiKhoan.Name = "TaiKhoan";
+            // 
+            // MatKhau
+            // 
+            this.MatKhau.DataPropertyName = "Password";
+            this.MatKhau.HeaderText = "Mật khẩu";
+            this.MatKhau.Name = "MatKhau";
+            // 
+            // Quyen
+            // 
+            this.Quyen.DataPropertyName = "Quyen";
+            this.Quyen.HeaderText = "Quyền truy cập";
+            this.Quyen.Name = "Quyen";
+            // 
             // FrmEmployeeManager
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -413,5 +463,11 @@
         private System.Windows.Forms.Button btnUpdate;
         private System.Windows.Forms.Button btnDelete;
         private System.Windows.Forms.Button btnViewPass;
+        private System.Windows.Forms.DataGridViewTextBoxColumn MaNhanVien;
+        private System.Windows.Forms.DataGridViewTextBoxColumn HoTen;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ChucVu;
+        private System.Windows.Forms.DataGridViewTextBoxColumn TaiKhoan;
+        private System.Windows.Forms.DataGridViewTextBoxColumn MatKhau;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Quyen;
     }
 }

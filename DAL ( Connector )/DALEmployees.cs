@@ -30,6 +30,16 @@ namespace DALConnector
             }
 
         }
+        public DataTable listUserBorrow()
+        {
+            DataTable dbtb = new DataTable();
+            ConnectorFactory.openConnectDB();
+            SqlCommand cmd = new SqlCommand("Select * from NhanVien", ConnectorFactory.conn);
+            SqlDataReader dr = cmd.ExecuteReader();
+            dbtb.Load(dr);
+            
+            return dbtb;
+        }
         public bool addNV(Employees addNV)
         {
             try
@@ -84,6 +94,7 @@ namespace DALConnector
              ConnectorFactory.openConnectDB();
             string sql = "select TaiKhoan,MatKhau  from NhanVien";
             SqlCommand cmd = new SqlCommand(sql, ConnectorFactory.conn);
+
             SqlDataReader readDB = cmd.ExecuteReader();
             while (readDB.Read())
             {

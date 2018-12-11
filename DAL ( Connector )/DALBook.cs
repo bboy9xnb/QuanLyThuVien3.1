@@ -8,7 +8,7 @@ using System.Data.SqlClient;
 using DTOModel;
 namespace DALConnector
 {
-    public  class DALBook
+    public class DALBook
     {
         // lấy danh sách thể loại
         public List<kind> ListViewKind()
@@ -26,7 +26,7 @@ namespace DALConnector
                 }
                 ConnectorFactory.closeConnectDB();
             }
-            catch(SqlException)
+            catch (SqlException)
             {
 
             }
@@ -38,12 +38,12 @@ namespace DALConnector
             try
             {
                 ConnectorFactory.openConnectDB();
-                string sqlInsertTL = "select MaTheLoai from TheLoai";
+                string sqlInsertTL = "select TenTheLoai from TheLoai";
                 SqlCommand cmdSql = new SqlCommand(sqlInsertTL, ConnectorFactory.conn);
-                SqlDataReader data =  cmdSql.ExecuteReader();
+                SqlDataReader data = cmdSql.ExecuteReader();
                 while (data.Read())
                 {
-                    id.Add(data["MaTheLoai"].ToString());
+                    id.Add(data["TenTheLoai"].ToString());
                 }
                 ConnectorFactory.closeConnectDB();
             }
@@ -63,11 +63,11 @@ namespace DALConnector
                 cmdSql.Parameters.AddWithValue("matl", k.matheloai);
                 cmdSql.Parameters.AddWithValue("tentl", k.tentheloai);
                 cmdSql.Parameters.AddWithValue("ghichu", k.ghichu);
-               
+
                 cmdSql.ExecuteNonQuery();
                 ConnectorFactory.closeConnectDB();
                 return true;
-              
+
             }
             catch (SqlException)
             {
@@ -85,7 +85,7 @@ namespace DALConnector
                 cmd.Parameters.AddWithValue("ma", updTl.matheloai);
                 cmd.Parameters.AddWithValue("ten", updTl.tentheloai);
                 cmd.Parameters.AddWithValue("ghi", updTl.ghichu);
-               
+
                 cmd.ExecuteNonQuery();
                 ConnectorFactory.closeConnectDB();
                 return true;
@@ -126,8 +126,8 @@ namespace DALConnector
                 SqlDataReader dr = cmd.ExecuteReader();
                 while (dr.Read())
                 {
-                   
-                    ds.Add(new kind(dr["MaTheLoai"].ToString(), dr["TenTheLoai"].ToString(), dr["GhiChu"].ToString() ));
+
+                    ds.Add(new kind(dr["MaTheLoai"].ToString(), dr["TenTheLoai"].ToString(), dr["GhiChu"].ToString()));
                 }
 
                 ConnectorFactory.closeConnectDB();
@@ -141,6 +141,32 @@ namespace DALConnector
 
             return ds;
         }
+
+        public string GetKindIdByKindName(string kindName)
+        {
+            string kindID = "";
+            string sqlQuery = "select MaTheLoai from TheLoai where TenTheLoai=@tenTL";
+            try
+            {
+                ConnectorFactory.openConnectDB();
+                SqlCommand cmd = new SqlCommand(sqlQuery, ConnectorFactory.conn);
+                cmd.Parameters.AddWithValue("tenTL", kindName);
+                SqlDataReader dr = cmd.ExecuteReader();
+                while (dr.Read())
+                {
+                    kindID = dr[0].ToString();
+                }
+                ConnectorFactory.closeConnectDB();
+
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+
+            return kindID;
+        }
         /*------------------------------------------------------------------------------*/
         public List<Book> LayThongTinTaiLieu()
         {
@@ -148,7 +174,7 @@ namespace DALConnector
             try
             {
                 ConnectorFactory.openConnectDB();
-                string sqlSELECT = "SELECT * From TaiLieu inner join TheLoai  on TaiLieu.MaTheLoai = TheLoai.MaTheLoai";
+                string sqlSELECT = "SELECT MaTaiLieu, TenTaiLieu, TenTheLoai, SoLuong, NhaXuatBan, NamXuatBan, TacGia From TaiLieu inner join TheLoai  on TaiLieu.MaTheLoai = TheLoai.MaTheLoai";
                 SqlCommand cmd = new SqlCommand(sqlSELECT, ConnectorFactory.conn);
                 SqlDataReader dr = cmd.ExecuteReader();
                 //đọc từng dòng và đưa vào danh sách
@@ -175,11 +201,15 @@ namespace DALConnector
 
         public bool ThemTL(Book addTL)
         {
+
             try
             {
                 ConnectorFactory.openConnectDB();
                 string sqlInsertTL = "insert into TaiLieu values (@matl,@tentl,@mathel,@sl,@nxb, @namxb,@tg)";
                 SqlCommand cmdSql = new SqlCommand(sqlInsertTL, ConnectorFactory.conn);
+
+
+
                 cmdSql.Parameters.AddWithValue("matl", addTL.MaTaiLieu);
                 cmdSql.Parameters.AddWithValue("tentl", addTL.TenTaiLieu);
                 cmdSql.Parameters.AddWithValue("mathel", addTL.MaTheLoai);
@@ -196,6 +226,7 @@ namespace DALConnector
                 return false;
             }
         }
+
 
         public bool checkTL(string ma)
         {
@@ -273,7 +304,7 @@ namespace DALConnector
                 SqlCommand cmd = new SqlCommand(sqlSELECT, ConnectorFactory.conn);
                 cmd.Parameters.AddWithValue("ma", ma);
                 SqlDataReader dr = cmd.ExecuteReader();
-                while(dr.Read())
+                while (dr.Read())
                 {
                     Book aTL = new Book(
                    dr["MaTaiLieu"].ToString(),
@@ -285,16 +316,16 @@ namespace DALConnector
                    dr["TacGia"].ToString());
                     ds.Add(aTL);
                 }
-               
+
                 ConnectorFactory.closeConnectDB();
 
-               
+
             }
             catch (SqlException)
             {
 
             }
-            
+
             return ds;
         }
     }

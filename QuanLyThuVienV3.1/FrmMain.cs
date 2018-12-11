@@ -16,6 +16,9 @@ namespace QuanLyThuVienV3._1
     public partial class FrmMain : Form
     {
         BULEmployees emp = new BULEmployees();
+        BULAuthor author = new BULAuthor();
+        BULBook book = new BULBook();
+        BULBorrowBook borow = new BULBorrowBook();
         public static string userAccount;
         public FrmMain(string use)
         {
@@ -27,6 +30,11 @@ namespace QuanLyThuVienV3._1
             if (iCheck == 1)
             {
                 mnCategoryManager.Visible = false;
+            }
+            else
+            {
+                mnStatisticalManager.Visible = false;
+                mnPayment.Visible = false;
             }
         }
 
@@ -62,17 +70,20 @@ namespace QuanLyThuVienV3._1
 
         private void mntopborrowedbycategory_Click(object sender, EventArgs e)
         {
-
+            FrmCheckOutBorrowBook st = new FrmCheckOutBorrowBook();
+            st.Show();
         }
 
         private void mnOverdueLoans_Click(object sender, EventArgs e)
         {
-
+            TKQuaHan tk = new TKQuaHan();
+            tk.Show();
         }
 
         private void mnTop10_Click(object sender, EventArgs e)
         {
-
+            TKTop10 tk = new TKTop10();
+            tk.Show();
         }
 
         private void mnSupport_Click(object sender, EventArgs e)
@@ -97,6 +108,15 @@ namespace QuanLyThuVienV3._1
         {
            
             lbSumEmployees.Text = emp.ViewList().Count.ToString();
+            lbSumDocGia.Text = author.LayDanhSachDG().Count.ToString();
+            lbSumBook.Text = book.ListViewKind().Count.ToString();
+        }
+
+        private void mnLogout_Click(object sender, EventArgs e)
+        {
+            Close();
+            FrmLogin login = new FrmLogin();
+            login.Show();
         }
     }
 }

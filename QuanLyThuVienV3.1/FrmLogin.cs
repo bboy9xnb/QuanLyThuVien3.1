@@ -19,8 +19,8 @@ namespace QuanLyThuVienV3._1
             InitializeComponent();
             if (employees.IsServerConnected())
             {
-                //tbUserName.Text = "VietPDb";
-                //tbPassWord.Text = "123456";
+                tbUserName.Text = "VietPDb";
+                tbPassWord.Text = "123456";
             }
             else
                 MessageBox.Show("không thể kết nối tới Server");

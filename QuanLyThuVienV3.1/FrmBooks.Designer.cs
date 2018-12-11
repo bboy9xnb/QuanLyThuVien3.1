@@ -70,6 +70,18 @@
             this.btnUpdateTL = new System.Windows.Forms.Button();
             this.btnDeleteBook = new System.Windows.Forms.Button();
             this.btnDeleteKind = new System.Windows.Forms.Button();
+            this.btnTimKiem2 = new System.Windows.Forms.Button();
+            this.txtTimKiem2 = new System.Windows.Forms.TextBox();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.menuStrip1.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
@@ -90,7 +102,7 @@
             this.mnRefesh});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1126, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(1217, 24);
             this.menuStrip1.TabIndex = 1;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -267,9 +279,9 @@
             this.label4.Font = new System.Drawing.Font("Segoe UI Historic", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.Location = new System.Drawing.Point(3, 62);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(80, 19);
+            this.label4.Size = new System.Drawing.Size(82, 19);
             this.label4.TabIndex = 3;
-            this.label4.Text = "Mã thể loại";
+            this.label4.Text = "Tên thể loại";
             // 
             // label9
             // 
@@ -395,9 +407,17 @@
             // 
             this.dataBook.BackgroundColor = System.Drawing.Color.White;
             this.dataBook.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataBook.Location = new System.Drawing.Point(296, 397);
+            this.dataBook.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Column3,
+            this.Column4,
+            this.Column9,
+            this.Column5,
+            this.Column6,
+            this.Column7,
+            this.Column8});
+            this.dataBook.Location = new System.Drawing.Point(296, 396);
             this.dataBook.Name = "dataBook";
-            this.dataBook.Size = new System.Drawing.Size(539, 150);
+            this.dataBook.Size = new System.Drawing.Size(895, 150);
             this.dataBook.TabIndex = 10;
             this.dataBook.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataBook_CellContentClick);
             // 
@@ -453,9 +473,13 @@
             // 
             this.dataTheLoai.BackgroundColor = System.Drawing.Color.White;
             this.dataTheLoai.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataTheLoai.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Column1,
+            this.Column2,
+            this.clo});
             this.dataTheLoai.Location = new System.Drawing.Point(296, 68);
             this.dataTheLoai.Name = "dataTheLoai";
-            this.dataTheLoai.Size = new System.Drawing.Size(240, 150);
+            this.dataTheLoai.Size = new System.Drawing.Size(485, 150);
             this.dataTheLoai.TabIndex = 16;
             this.dataTheLoai.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataTheLoai_CellContentClick);
             // 
@@ -489,12 +513,91 @@
             this.btnDeleteKind.UseVisualStyleBackColor = true;
             this.btnDeleteKind.Click += new System.EventHandler(this.btnDeleteKind_Click);
             // 
+            // btnTimKiem2
+            // 
+            this.btnTimKiem2.Location = new System.Drawing.Point(855, 370);
+            this.btnTimKiem2.Name = "btnTimKiem2";
+            this.btnTimKiem2.Size = new System.Drawing.Size(115, 23);
+            this.btnTimKiem2.TabIndex = 23;
+            this.btnTimKiem2.Text = "Tìm Kiếm Tài Liệu";
+            this.btnTimKiem2.UseVisualStyleBackColor = true;
+            this.btnTimKiem2.Click += new System.EventHandler(this.btnTimKiem2_Click_1);
+            // 
+            // txtTimKiem2
+            // 
+            this.txtTimKiem2.Location = new System.Drawing.Point(703, 373);
+            this.txtTimKiem2.Name = "txtTimKiem2";
+            this.txtTimKiem2.Size = new System.Drawing.Size(146, 20);
+            this.txtTimKiem2.TabIndex = 22;
+            // 
+            // Column1
+            // 
+            this.Column1.DataPropertyName = "MaTheLoai";
+            this.Column1.HeaderText = "Mã thể loại";
+            this.Column1.Name = "Column1";
+            // 
+            // Column2
+            // 
+            this.Column2.DataPropertyName = "TenTheLoai";
+            this.Column2.HeaderText = "Tên thể loại";
+            this.Column2.Name = "Column2";
+            // 
+            // clo
+            // 
+            this.clo.DataPropertyName = "GhiChu";
+            this.clo.HeaderText = "Ghi chú";
+            this.clo.Name = "clo";
+            // 
+            // Column3
+            // 
+            this.Column3.DataPropertyName = "MaTaiLieu";
+            this.Column3.HeaderText = "Mã tài liệu";
+            this.Column3.Name = "Column3";
+            // 
+            // Column4
+            // 
+            this.Column4.DataPropertyName = "TenTaiLieu";
+            this.Column4.HeaderText = "Tên tài liệu";
+            this.Column4.Name = "Column4";
+            // 
+            // Column9
+            // 
+            this.Column9.DataPropertyName = "MaTheLoai";
+            this.Column9.HeaderText = "Tên Thể loại";
+            this.Column9.Name = "Column9";
+            // 
+            // Column5
+            // 
+            this.Column5.DataPropertyName = "SoLuong";
+            this.Column5.HeaderText = "Số lượng";
+            this.Column5.Name = "Column5";
+            // 
+            // Column6
+            // 
+            this.Column6.DataPropertyName = "NhaXuatBan";
+            this.Column6.HeaderText = "Nhà xuất bản";
+            this.Column6.Name = "Column6";
+            // 
+            // Column7
+            // 
+            this.Column7.DataPropertyName = "NamXuatBan";
+            this.Column7.HeaderText = "Năm xuất bản";
+            this.Column7.Name = "Column7";
+            // 
+            // Column8
+            // 
+            this.Column8.DataPropertyName = "TacGia";
+            this.Column8.HeaderText = "Tác giả";
+            this.Column8.Name = "Column8";
+            // 
             // FrmBooks
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::QuanLyThuVienV3._1.Properties.Resources.background_powerpoint_dep_cho_hoc_sinh_3_228x171;
-            this.ClientSize = new System.Drawing.Size(1126, 659);
+            this.ClientSize = new System.Drawing.Size(1217, 659);
+            this.Controls.Add(this.btnTimKiem2);
+            this.Controls.Add(this.txtTimKiem2);
             this.Controls.Add(this.btnDeleteKind);
             this.Controls.Add(this.btnDeleteBook);
             this.Controls.Add(this.btnUpdateTL);
@@ -577,5 +680,17 @@
         private System.Windows.Forms.Button btnUpdateTL;
         private System.Windows.Forms.Button btnDeleteBook;
         private System.Windows.Forms.Button btnDeleteKind;
+        private System.Windows.Forms.Button btnTimKiem2;
+        private System.Windows.Forms.TextBox txtTimKiem2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column9;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column7;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column8;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn clo;
     }
 }

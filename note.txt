@@ -1,6 +1,0 @@
-sửa tiến việt thuần
-
- phân quyền admin không cho mượn trả
-
- mã nhân viên tự sinh
- 

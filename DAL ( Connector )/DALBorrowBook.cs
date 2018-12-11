@@ -12,6 +12,7 @@ namespace DALConnector
 {
     public class DALBorrowBook
     {
+       
         public List<BorrowDetail> ListViewBorrowDetail()
         {
             List<BorrowDetail> list = new List<BorrowDetail>();

@@ -22,24 +22,35 @@ namespace QuanLyThuVienV3._1
 
         private void btnAddTL_Click(object sender, EventArgs e)
         {
+            int count = 0;
+            count = dataTheLoai.Rows.Count;
+            string chuoi = "";
+            int chuoi2 = 0;
+            chuoi = Convert.ToString(dataTheLoai.Rows[count - 1].Cells[0].Value);
+            chuoi2 = Convert.ToInt32((chuoi.Remove(0, 1)));
+            if (chuoi2 + 1 < 10)
+                tbTheLoaiID.Text = "M0" + (chuoi2 + 1).ToString();
+            else if (chuoi2 + 1 < 100)
+                tbTheLoaiID.Text = "M" + (chuoi2 + 1).ToString();
+
             string id = tbTheLoaiID.Text;
             string name = tbTheLoaiName.Text;
             string note = tbGhiChu.Text;
-            if (id.Equals("") || name.Equals(""))
-                MessageBox.Show( "Vui lòng nhập thông tin thể loại", "Thông báo");
-            else
+            //if (id.Equals("") || name.Equals(""))
+            //MessageBox.Show("Vui lòng nhập thông tin thể loại", "Thông báo");
+            //else
+            //{
+            if (book.AddKind(new kind(id, name, note)))
             {
-                if (book.AddKind(new kind(id, name, note)))
-                {
-                    MessageBox.Show( "Đã thêm thể loại thành công! ", "Thành công");
-                    ViewData();
-                    tbTheLoaiID.Text = "";
-                    tbTheLoaiName.Text = "";
-                    tbGhiChu.Text = "";
-                }
-                else
-                    MessageBox.Show( "Có lỗi xảy ra, vui lòng kiểm tra lại", "Lỗi");
+                MessageBox.Show("Đã thêm thể loại thành công! ", "Thành công");
+                ViewData();
+                tbTheLoaiID.Text = "";
+                tbTheLoaiName.Text = "";
+                tbGhiChu.Text = "";
             }
+            else
+                MessageBox.Show("Có lỗi xảy ra, vui lòng kiểm tra lại", "Lỗi");
+            //}
         }
 
         private void btnCancelTL_Click(object sender, EventArgs e)
@@ -54,45 +65,67 @@ namespace QuanLyThuVienV3._1
 
         private void btnAddBook_Click(object sender, EventArgs e)
         {
+
+
+            int count = 0;
+            count = dataBook.Rows.Count;
+            string chuoi = "";
+            int chuoi2 = 0;
+            chuoi = Convert.ToString(dataBook.Rows[count - 1].Cells[0].Value);
+            chuoi2 = Convert.ToInt32((chuoi.Remove(0, 3)));
+            if (chuoi2 + 1 < 10)
+                tbBookID.Text = "MTL0" + (chuoi2 + 1).ToString();
+            else if (chuoi2 + 1 < 100)
+                tbBookID.Text = "MTL" + (chuoi2 + 1).ToString();
+
+
+
             string matl = tbBookID.Text;
             string tentl = tbName.Text;
-            string matheloai =cbTLID.Text;
+            string matheloai = book.GetKindIdByKindName(cbTLID.Text.Trim());
             string sl = tbCountBook.Text;
             string namxb = tbYearXB.Text;
             string nxb = tbNXB.Text;
             string tg = tbAuthor.Text;
 
-            if (matl.Equals(""))
-                MessageBox.Show("Vui lòng nhập mã tài liệu", "Thông báo");
+
+            //if (matl.Equals(""))
+            //    MessageBox.Show("Vui lòng nhập mã tài liệu", "Thông báo");
+            //else
+            //{
+            if (System.Text.RegularExpressions.Regex.IsMatch(tbCountBook.Text, "[^0-9]"))
+            {
+                MessageBox.Show("Số lượng sách phải là chữ số!");
+                tbCountBook.Text = "";
+            }
+            else if (System.Text.RegularExpressions.Regex.IsMatch(tbYearXB.Text, "[^0-9]"))
+            {
+                MessageBox.Show("Năm xuất bản phải là chữ số!");
+                tbYearXB.Text = "";
+            }
             else
             {
-                if (System.Text.RegularExpressions.Regex.IsMatch(tbCountBook.Text, "[^0-9]"))
+                if (book.ThemMotTaiLieu(new Book(matl, tentl, matheloai, int.Parse(sl), nxb, int.Parse(namxb), tg)))
                 {
-                    MessageBox.Show("Please enter only numbers.");
+                    MessageBox.Show("Thêm tài liệu thành công");
+                    setTextNull();
+                    ViewData();
+                    tbBookID.Text = "";
+                    tbName.Text = "";
+
                     tbCountBook.Text = "";
+                    tbYearXB.Text = "";
+                    tbNXB.Text = "";
+                    tbAuthor.Text = "";
                 }
-                else {
-                    if (book.ThemMotTaiLieu(new Book(matl, tentl, matheloai, int.Parse(sl), nxb, int.Parse(namxb), tg)))
-                    {
-                        MessageBox.Show("Thêm tài liệu thành công");
-                        setTextNull();
-                        ViewData();
-                        tbBookID.Text = "";
-                        tbName.Text = "";
-
-                        tbCountBook.Text = "";
-                        tbYearXB.Text = "";
-                        tbNXB.Text = "";
-                        tbAuthor.Text = "";
-                    }
-                    else
-                    {
-                        MessageBox.Show("Có lỗi xảy ra vui lòng kiểm tra lại mã tài liệu");
-                    }
+                else
+                {
+                    MessageBox.Show("Có lỗi xảy ra vui lòng kiểm tra lại mã tài liệu");
                 }
-
-                
             }
+
+
+            //}   
         }
 
         private void btnCancelBook_Click(object sender, EventArgs e)
@@ -123,9 +156,9 @@ namespace QuanLyThuVienV3._1
             {
                 //TODO - Button Clicked - Execute Code Here
                 int i = int.Parse(dataBook.CurrentRow.Index.ToString());
-                
+
                 string selectID = dataBook.Rows[i].Cells[0].Value.ToString();
-                
+
 
                 List<Book> list = book.TimTaiLieuTheoMa(selectID);
                 if (list.Count > 0)
@@ -140,7 +173,7 @@ namespace QuanLyThuVienV3._1
                     tbBookID.Enabled = false;
                 }
 
-                
+
             }
         }
 
@@ -148,9 +181,9 @@ namespace QuanLyThuVienV3._1
         {
 
             ViewData();
-           
+
         }
-       
+
         private void ViewData()
         {
             // hiển thị danh sách thể loại
@@ -162,16 +195,16 @@ namespace QuanLyThuVienV3._1
             }
             btnAddBook.Visible = true;
             cbTLID.DataSource = book.listID();
-            dataTheLoai.Height = heightTL;
+            //dataTheLoai.Height = heightTL;
             lbTL.Text = "Danh sách thể loại ";
             btnUpdateBook.Visible = false;
             btnUpdateTL.Visible = false;
             btnDeleteBook.Visible = false;
             btnDeleteKind.Visible = false;
-            tbTheLoaiID.Enabled = true;
+            tbTheLoaiID.Enabled = false;
             dataTheLoai.ReadOnly = true;
             dataTheLoai.DataSource = book.ListViewKind();
-            dataTheLoai.AutoSize = true;
+
             btnViewDetailTL.Name = "";
             btnViewDetailTL.Text = "Xem chi tiết";
             btnViewDetailTL.UseColumnTextForButtonValue = true;
@@ -187,6 +220,7 @@ namespace QuanLyThuVienV3._1
             }
 
             // hiển thị danh sách tài liệu
+            //tbBookID.Enabled = false;
             var height = 0;
             foreach (DataGridViewRow row in dataBook.Rows)
             {
@@ -194,21 +228,21 @@ namespace QuanLyThuVienV3._1
                     height += row.Height;
             }
             cbTLID.DataSource = book.listID();
-            dataBook.Height = height;
+            //dataBook.Height = height;
             lbTitle.Text = "Thêm tài liệu mới";
-            
-            tbBookID.Enabled = true;
+
+            tbBookID.Enabled = false;
             dataBook.ReadOnly = true;
             dataBook.DataSource = book.LayDanhSachTaiLieu();
-            dataBook.AutoSize = true;
+            //dataBook.AutoSize = true;
             btnViewDetail.Name = "";
             btnViewDetail.Text = "Xem chi tiết";
             btnViewDetail.UseColumnTextForButtonValue = true;
             int columnIndex1 = 7;
-            
-            if (dataBook.Columns[""] == null )
+
+            if (dataBook.Columns[""] == null)
             {
-                
+
                 dataBook.Columns.Insert(columnIndex1, btnViewDetail);
             }
             else
@@ -216,7 +250,7 @@ namespace QuanLyThuVienV3._1
                 dataBook.Columns.Remove(btnViewDetail);
                 dataBook.Columns.Insert(columnIndex1, btnViewDetail);
             }
-           
+
 
 
         }
@@ -225,14 +259,14 @@ namespace QuanLyThuVienV3._1
         {
             string matl = tbBookID.Text;
             string tentl = tbName.Text;
-            string matheloai = cbTLID.Text;
+            string matheloai = book.GetKindIdByKindName(cbTLID.Text.Trim());
             string sl = tbCountBook.Text;
             string namxb = tbYearXB.Text;
             string nxb = tbNXB.Text;
             string tg = tbAuthor.Text;
             if (System.Text.RegularExpressions.Regex.IsMatch(tbCountBook.Text, "[^0-9]"))
             {
-                MessageBox.Show("Please enter only numbers.");
+                MessageBox.Show("Số lượng sách phải là số");
                 tbCountBook.Text = "";
             }
             else
@@ -255,8 +289,8 @@ namespace QuanLyThuVienV3._1
                     MessageBox.Show("Có lỗi xảy ra vui lòng kiểm tra lại mã tài liệu");
                 }
             }
-           
-            
+
+
         }
 
         private void mnBackHome_Click(object sender, EventArgs e)
@@ -270,14 +304,14 @@ namespace QuanLyThuVienV3._1
                 ViewData();
             else
             {
-                if (book.TimTaiLieuTheoMa(tbSearchID.Text).Count == 0 && book.SearchByID(tbSearchID.Text).Count==0)
-                    MessageBox.Show("Không tìm thấy mã tài liệu hay mã thể loại là : " + tbSearchID.Text, "Thông báo");
+                if (book.SearchByID(tbSearchID.Text).Count == 0)
+                    MessageBox.Show("Không tìm thấymã thể loại là : " + tbSearchID.Text, "Thông báo");
                 else
                 {
-                    if(book.SearchByID(tbSearchID.Text).Count == 0)
-                        dataBook.DataSource = book.TimTaiLieuTheoMa(tbSearchID.Text);
-                    else
-                        dataTheLoai.DataSource = book.SearchByID(tbSearchID.Text);
+                    //if (book.SearchByID(tbSearchID.Text).Count == 0)
+                    //    dataBook.DataSource = book.TimTaiLieuTheoMa(tbSearchID.Text);
+                    //else
+                    dataTheLoai.DataSource = book.SearchByID(tbSearchID.Text);
                 }
             }
         }
@@ -311,18 +345,18 @@ namespace QuanLyThuVienV3._1
         private void btnUpdateTL_Click(object sender, EventArgs e)
         {
 
-            if (book.UpdateKind(new kind(tbTheLoaiID.Text, tbTheLoaiName.Text,tbGhiChu.Text)))
+            if (book.UpdateKind(new kind(tbTheLoaiID.Text, tbTheLoaiName.Text, tbGhiChu.Text)))
             {
                 setTextNull();
                 MessageBox.Show("Cập nhập thể loại thành công");
                 ViewData();
-                
+
             }
             else
             {
                 MessageBox.Show("Có lỗi xảy ra vui lòng kiểm tra lại mã thể loại");
             }
-        
+
         }
 
         private void btnDeleteBook_Click(object sender, EventArgs e)
@@ -346,7 +380,7 @@ namespace QuanLyThuVienV3._1
 
         private void btnDeleteKind_Click(object sender, EventArgs e)
         {
-            if (MessageBox.Show("bạn xóa mã thể loại "+ tbTheLoaiID.Text+"?", "Xóa thể loại", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            if (MessageBox.Show("bạn xóa mã thể loại " + tbTheLoaiID.Text + "?", "Xóa thể loại", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
                 if (book.DeleteKind(tbTheLoaiID.Text))
                 {
@@ -375,6 +409,53 @@ namespace QuanLyThuVienV3._1
             tbTheLoaiName.Text = "";
             tbYearXB.Text = "";
             tbGhiChu.Text = "";
+        }
+
+        private void tbSearchID_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnTimKiem2_Click(object sender, EventArgs e)
+        {
+            if (txtTimKiem2.Text.Equals(""))
+                ViewData();
+            else
+            {
+                if (book.TimTaiLieuTheoMa(txtTimKiem2.Text).Count == 0)
+                    MessageBox.Show("Không tìm thấy mã tài liệu là : " + txtTimKiem2.Text, "Thông báo");
+                else
+                {
+                    //if (book.SearchByID(txtTimKiem2.Text).Count == 0)
+                    dataBook.DataSource = book.TimTaiLieuTheoMa(txtTimKiem2.Text);
+                    //else
+                    // dataBook.DataSource = book.SearchByID(txtTimKiem2.Text);
+                }
+            }
+        }
+
+        private void mnRefesh_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnTimKiem2_Click_1(object sender, EventArgs e)
+        {
+            if (txtTimKiem2.Text.Equals(""))
+                ViewData();
+            else
+            {
+                if (book.TimTaiLieuTheoMa(txtTimKiem2.Text).Count == 0)
+                    MessageBox.Show("Không tìm thấy mã tài liệu là : " + txtTimKiem2.Text, "Thông báo");
+                else
+                {
+                    //if (book.SearchByID(txtTimKiem2.Text).Count == 0)
+                    dataBook.DataSource = book.TimTaiLieuTheoMa(txtTimKiem2.Text);
+                    //else
+                    // dataBook.DataSource = book.SearchByID(txtTimKiem2.Text);
+                }
+            }
+
         }
     }
 }

@@ -28,9 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.mnCategoryManager = new System.Windows.Forms.ToolStripMenuItem();
             this.mnEmployeesManager = new System.Windows.Forms.ToolStripMenuItem();
@@ -59,10 +56,9 @@
             this.lbSumBook = new System.Windows.Forms.Label();
             this.lbSumOutDate = new System.Windows.Forms.Label();
             this.lnSumBorrow = new System.Windows.Forms.Label();
-            this.chartData = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            this.mnLogout = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.chartData)).BeginInit();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -72,6 +68,7 @@
             this.mnPayment,
             this.mnStatisticalManager,
             this.mnSupport,
+            this.mnLogout,
             this.mnExit});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
@@ -191,7 +188,7 @@
             // 
             // monthCalendar1
             // 
-            this.monthCalendar1.Location = new System.Drawing.Point(17, 90);
+            this.monthCalendar1.Location = new System.Drawing.Point(696, 63);
             this.monthCalendar1.Name = "monthCalendar1";
             this.monthCalendar1.TabIndex = 1;
             // 
@@ -211,7 +208,7 @@
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Sitka Heading", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(13, 273);
+            this.label1.Location = new System.Drawing.Point(12, 76);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(144, 23);
             this.label1.TabIndex = 3;
@@ -233,7 +230,7 @@
             this.tableLayoutPanel1.Controls.Add(this.lbSumBook, 1, 2);
             this.tableLayoutPanel1.Controls.Add(this.lbSumOutDate, 0, 4);
             this.tableLayoutPanel1.Controls.Add(this.lnSumBorrow, 1, 3);
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(17, 310);
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(17, 114);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 5;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
@@ -354,21 +351,12 @@
             this.lnSumBorrow.TabIndex = 13;
             this.lnSumBorrow.Text = "0";
             // 
-            // chartData
+            // mnLogout
             // 
-            chartArea1.Name = "ChartArea1";
-            this.chartData.ChartAreas.Add(chartArea1);
-            legend1.Name = "Legend1";
-            this.chartData.Legends.Add(legend1);
-            this.chartData.Location = new System.Drawing.Point(410, 90);
-            this.chartData.Name = "chartData";
-            series1.ChartArea = "ChartArea1";
-            series1.Legend = "Legend1";
-            series1.Name = "Series1";
-            this.chartData.Series.Add(series1);
-            this.chartData.Size = new System.Drawing.Size(481, 189);
-            this.chartData.TabIndex = 5;
-            this.chartData.Text = "chart1";
+            this.mnLogout.Name = "mnLogout";
+            this.mnLogout.Size = new System.Drawing.Size(72, 20);
+            this.mnLogout.Text = "Đăng xuất";
+            this.mnLogout.Click += new System.EventHandler(this.mnLogout_Click);
             // 
             // FrmMain
             // 
@@ -376,7 +364,6 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::QuanLyThuVienV3._1.Properties.Resources.background;
             this.ClientSize = new System.Drawing.Size(923, 529);
-            this.Controls.Add(this.chartData);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.lbUserName);
@@ -392,7 +379,6 @@
             this.menuStrip1.PerformLayout();
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.chartData)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -428,6 +414,6 @@
         private System.Windows.Forms.Label lbSumBook;
         private System.Windows.Forms.Label lbSumOutDate;
         private System.Windows.Forms.Label lnSumBorrow;
-        private System.Windows.Forms.DataVisualization.Charting.Chart chartData;
+        private System.Windows.Forms.ToolStripMenuItem mnLogout;
     }
 }

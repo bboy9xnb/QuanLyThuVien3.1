@@ -45,7 +45,9 @@
     <Compile Include="DALAuthor.cs" />
     <Compile Include="DALBook.cs" />
     <Compile Include="DALBorrowBook.cs" />
+    <Compile Include="DALCheckoutBorrow.cs" />
     <Compile Include="DALEmployees.cs" />
+    <Compile Include="DALThongKeTop10.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
